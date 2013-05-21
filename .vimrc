@@ -46,12 +46,15 @@ set hlsearch
 
 " Map Ctrl+l to clear highlighted searches
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+"remap ctag ascending
+"nnoremap <C-[> <C-t>
 
 " Highlight characters behind the 80 chars margin
 :au BufWinEnter * let w:m2=matchadd('ColumnMargin', '\%>80v.\+', -1)
 
-" Disable code folding
-set nofoldenable
+" folding
+set foldmethod=indent
+nnoremap <Space> za
 
 " Directories for swp files
 set backupdir=~/.vimbackup
@@ -92,3 +95,11 @@ let g:ctrlp_custom_ignore = {
 
 let g:erlangCheckFile = "~/.vim/bundle/vimerl/compiler/erlang_check_file.erl"
 let g:erlangHighlightErrors = 1
+
+
+" Add the following below if you want to generate ctags upon saving a file
+" Auto-generate ctags upon making changes to a file
+autocmd BufWritePost *.erl :silent !(cd %:p:h;ctags *)&
+
+" turn on folding for vimerl
+let g:erlangFold=1
