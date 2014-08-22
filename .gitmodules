@@ -27,10 +27,9 @@
         path = .vim/bundle/supertab
         url = https://github.com/ervandew/supertab.git
 
-[submodule ".vim/bundle/vimerl"]
-        path = .vim/bundle/vimerl
-        url = https://github.com/jimenezrick/vimerl.git
-
 [submodule ".vim/bundle/dwm.git"]
 	path = .vim/bundle/dwm.git
 	url = https://github.com/spolu/dwm.vim.git
+[submodule ".vim/bundle/vim-colors-solarized"]
+	path = .vim/bundle/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git
