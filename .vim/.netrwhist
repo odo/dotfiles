@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/florianodronitz/src/udp_qos'
-let g:netrw_dirhist_2='/Users/florianodronitz/src/dynamole_backend'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/odo/src'
+let g:netrw_dirhist_2='/Users/odo/src/kafka_0.6_replicator/deps/erlconf'
+let g:netrw_dirhist_3='/Users/odo/src/kafka-erlang'
+let g:netrw_dirhist_4='/Users/odo/src/kafka_ductus'
+let g:netrw_dirhist_5='/Users/odo/src/kafka_ductus/src'
+let g:netrw_dirhist_6='/Users/odo/src/krait'
