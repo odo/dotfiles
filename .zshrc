@@ -34,7 +34,7 @@ plugins=(
   dotenv
   osx
 )
-export PATH="/Users/odo101/anaconda2/bin:/usr/local/opt/openssl/bin:$PATH"
+export PATH="/Users/odo101/anaconda2/bin:/usr/local/opt/openssl/bin:/opt/homebrew/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/usr/local/google-cloud-sdk/path.zsh.inc' ]; then . '/usr/local/google-cloud-sdk/path.zsh.inc'; fi
@@ -44,3 +44,8 @@ if [ -f '/usr/local/google-cloud-sdk/completion.zsh.inc' ]; then . '/usr/local/g
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+source <(kubectl completion zsh)
+#source <(helm completion zsh)
+
+ssh-add -A
