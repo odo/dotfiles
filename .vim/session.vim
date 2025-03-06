@@ -15,7 +15,7 @@ inoremap <expr> <Plug>(fzf-complete-file-ag) fzf#vim#complete#path('ag -l -g ""'
 inoremap <expr> <Plug>(fzf-complete-line) fzf#vim#complete#line()
 inoremap <expr> <Plug>(fzf-complete-buffer-line) fzf#vim#complete#buffer_line()
 inoremap <silent> <Plug>(fzf-maps-i) :call fzf#vim#maps('i', 0)
-inoremap <C-Tab> 	
+inoremap <C-Tab> 
 imap <S-Tab> <Plug>SuperTabBackward
 map! <D-v> *
 vmap  :w !pbcopy

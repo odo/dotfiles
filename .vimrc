@@ -12,7 +12,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'elixir-editors/vim-elixir'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
-Plug 'jimenezrick/vimerl'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
@@ -22,6 +21,8 @@ Plug 'vim-test/vim-test'
 Plug 'kaarmu/typst.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 call plug#end()
 
 " Enable syntax highlighting
@@ -30,8 +31,8 @@ filetype plugin indent on
 
 " Colorscheme
 set background=dark
-colorscheme solarized
-let g:solarized_termcolors=256
+" colorscheme solarized
+" let g:solarized_termcolors=256
 
 " Add line numbers
 set number
@@ -47,11 +48,11 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-" Show trailing spaces and highlight hard tabs
-set list listchars=tab:»·,trail:·
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
+" Show trailing spaces and highlight hard tabs
+set list listchars=tab:»·,trail:·
 
 " Strip trailing whitespaces on each save
 fun! <SID>StripTrailingWhitespaces()
@@ -221,8 +222,12 @@ if executable('elp')
         \ 'allowlist': ['erlang'],
         \ })
 endif
-"
+
 " Autocomplete
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
+
+" 80 column mark
+highlight ColorColumn ctermbg=23
+let &colorcolumn=join(range(81,81),",")
